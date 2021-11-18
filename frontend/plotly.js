@@ -59,15 +59,15 @@ async function myFunc() {
       y2.push(finalAra[3])
     }
     let trace1 = {
-      x: y1,
-      y: x2
+      x: x2,
+      y: y1
     };
     var layout = {font: {size: 18}};
     var config = {responsive: true};
     TESTER = document.getElementById('graph1');
     Plotly.newPlot(TESTER, [trace1], layout, config);
   
-    Plotly.plot(document.getElementById("graph1"), [trace1],layout,config);
+   // Plotly.plot(document.getElementById("graph1"), [trace1],layout,config);
 
   })
 
