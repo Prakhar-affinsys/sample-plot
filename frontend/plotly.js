@@ -53,10 +53,10 @@ async function myFunc() {
     }
     console.log(finalAra);
     for (let i = 0; i < finalAra.length; i++) {
-      xl.push(finalAra[i].id)
-      yl.push(finalAra[i].Name)
-      x2.push(finalAra[i].age)
-      y2.push(finalAra[i].number)
+      xl.push(finalAra[0])
+      yl.push(finalAra[1])
+      x2.push(finalAra[2])
+      y2.push(finalAra[3])
     }
     let trace1 = {
       x: x2,
