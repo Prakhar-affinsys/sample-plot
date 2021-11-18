@@ -40,10 +40,10 @@ async function myFunc() {
     console.log(res);
     D=res;
 
-    var a = D[0];
-    var b = D[1];
-    var c = D[2];
-    var d = D[3];
+    var a = D.id;
+    var b = D.name;
+    var c = D.age;
+    var d = D.number;
 
     var finalAra = [];
     for(var i=0;i<a.length;i++){
