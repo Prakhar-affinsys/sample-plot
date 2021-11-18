@@ -68,7 +68,7 @@ async function myFunc() {
     TESTER = document.getElementById('graph1');
     Plotly.newPlot(TESTER, [trace1], layout, config);
   
-    Plotly.plot(document.getElementById("graph1"), [trace1]);
+    Plotly.plot(document.getElementById("graph1"), [trace1],layout,config);
 
   })
 
