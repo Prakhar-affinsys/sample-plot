@@ -20,7 +20,7 @@ from django_plot import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('filter/', views.filter),
+    path('charts/filter/', views.filter),
     path('filter1/', views.filter1),
     path('filter2/', views.filter2),
     path('filter3/', views.filter3),
