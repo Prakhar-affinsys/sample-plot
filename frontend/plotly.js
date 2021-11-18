@@ -15,25 +15,30 @@ let D=[];
 //   }
 // }
 
-function fetch1(){
-  return $.ajax({
+async function fetch1(){
+  D= await $.ajax({
     url: "https://dev1.bankbuddy.me/charts/filter/",
       type:"GET",
       headers:{
           "Content-type":"application/json"
       },
-      success: function(data){
-          q = $("<li>"+JSON.stringify(data)+"</li>")
-          D=data;
-          return D;
-      }
+      // success: function(data){
+      //     q = $("<li>"+JSON.stringify(data)+"</li>")
+      //     D=data;
+      //     return D;
+      // }
   });
+  return D;
 }
 
 
 async function myFunc() {
-  let data = await fetch1();
-  console.log(data[0])
+  // let data = await fetch1();
+  // console.log(data[0])
+
+  fetch1().then(res=>{
+    console.log(res);
+  })
 
   for (let i = 0; i < D.length; i++) {
     xl.push(D[i].id)
