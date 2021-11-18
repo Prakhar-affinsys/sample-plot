@@ -17,7 +17,7 @@ let D=[];
 
 function fetch(){
   $.ajax({
-      url: "http://127.0.0.1:8000/filter/",
+    url: "https://dev1.bankbuddy.me/charts/filter/",
       type:"GET",
       headers:{
           "Content-type":"application/json"
