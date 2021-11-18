@@ -16,7 +16,7 @@ let D=[];
 // }
 
 async function fetch1(){
-  D= await $.ajax({
+  let x= await $.ajax({
     url: "https://dev1.bankbuddy.me/charts/filter/",
       type:"GET",
       headers:{
@@ -28,7 +28,7 @@ async function fetch1(){
       //     return D;
       // }
   });
-  return D;
+  return x;
 }
 
 
@@ -38,12 +38,25 @@ async function myFunc() {
 
   fetch1().then(res=>{
     console.log(res);
+    D=res;
+
+    var a = D[0];
+    var b = D[1];
+    var c = D[2];
+    var d = D[3];
+
+    var finalAra = [];
+    for(var i=0;i<a.length;i++){
+      var temp = [];
+      temp.push(a[i]);temp.push(b[i]);temp.push(c[i]);temp.push(d[i])
+      finalAra.push(temp);
+    }
    
-    for (let i = 0; i < D.length; i++) {
-      xl.push(D[i].id)
-      yl.push(D[i].Name)
-      x2.push(D[i].age)
-      y2.push(D[i].number)
+    for (let i = 0; i < finalAra.length; i++) {
+      xl.push(finalAra[i].id)
+      yl.push(finalAra[i].Name)
+      x2.push(finalAra[i].age)
+      y2.push(finalAra[i].number)
     }
     let trace1 = {
       x: x2,
