@@ -60,8 +60,7 @@ async function myFunc() {
     }
     let trace1 = {
       x: x2,
-      y: yl,
-      type: 'bar'
+      y: yl
     };
     var layout = {font: {size: 18}};
     var config = {responsive: true};
