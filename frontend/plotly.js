@@ -25,36 +25,35 @@ function fetch(){
       success: function(data){
           q = $("<li>"+JSON.stringify(data)+"</li>")
           D=data;
-          console.log(D);
       }
   });
 }
 
-//do whatever you want with the data response
-// async function myFunc() {
-//   let data = await getData();
-//   console.log(data[0])
 
-//   for (let i = 0; i < data.length; i++) {
-//     xl.push(data[i].id)
-//     yl.push(data[i].Name)
-//     x2.push(data[i].age)
-//     y2.push(data[i].number)
-//   }
-//   let trace1 = {
-//     x: x2,
-//     y: yl,
-//     type: 'bar'
-//   };
-//   var layout = {font: {size: 18}};
-//   var config = {responsive: true};
-//   TESTER = document.getElementById('graph1');
-//   Plotly.newPlot(TESTER, [trace1], layout, config);
+async function myFunc() {
+  let data = await getData();
+  //console.log(data[0])
 
-  //Plotly.plot(document.getElementById("graph1"), [trace1]);
+  for (let i = 0; i < D.length; i++) {
+    xl.push(D[i].id)
+    yl.push(D[i].Name)
+    x2.push(D[i].age)
+    y2.push(D[i].number)
+  }
+  let trace1 = {
+    x: x2,
+    y: yl,
+    type: 'bar'
+  };
+  var layout = {font: {size: 18}};
+  var config = {responsive: true};
+  TESTER = document.getElementById('graph1');
+  Plotly.newPlot(TESTER, [trace1], layout, config);
 
-// }
+  Plotly.plot(document.getElementById("graph1"), [trace1]);
 
-// myFunc();
+}
+
+myFunc();
 
 fetch();
