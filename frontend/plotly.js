@@ -16,7 +16,7 @@ let D=[];
 // }
 
 function fetch1(){
-  $.ajax({
+  return $.ajax({
     url: "https://dev1.bankbuddy.me/charts/filter/",
       type:"GET",
       headers:{
@@ -25,7 +25,7 @@ function fetch1(){
       success: function(data){
           q = $("<li>"+JSON.stringify(data)+"</li>")
           D=data;
-          return D
+          return D;
       }
   });
 }
@@ -33,7 +33,7 @@ function fetch1(){
 
 async function myFunc() {
   let data = await fetch1();
-  //console.log(data[0])
+  console.log(data[0])
 
   for (let i = 0; i < D.length; i++) {
     xl.push(D[i].id)
