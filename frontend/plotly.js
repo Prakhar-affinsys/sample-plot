@@ -41,7 +41,7 @@ async function myFunc() {
     D=res;
 
     var a = D.id;
-    var b = D.name;
+    var b = D.Name;
     var c = D.age;
     var d = D.number;
 
