@@ -62,7 +62,7 @@ async function myFunc() {
       x: x2,
       y: yl
     };
-    var layout = {font: {size: 18}};
+    var layout = {font: {size: 5}};
     var config = {responsive: true};
     TESTER = document.getElementById('graph1');
     Plotly.newPlot(TESTER, [trace1], layout, config);
