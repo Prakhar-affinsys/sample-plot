@@ -51,7 +51,7 @@ async function myFunc() {
       temp.push(a[i]);temp.push(b[i]);temp.push(c[i]);temp.push(d[i])
       finalAra.push(temp);
     }
-   
+    console.log(finalAra);
     for (let i = 0; i < finalAra.length; i++) {
       xl.push(finalAra[i].id)
       yl.push(finalAra[i].Name)
