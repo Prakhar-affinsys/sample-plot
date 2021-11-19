@@ -9,7 +9,7 @@ let D=[];
 async function fetch1(){
   let x= await $.ajax({
     url: "https://dev1.bankbuddy.me/charts/filter/",
-      type:"GET",
+      type:"POST",
       headers:{
           "Content-type":"application/json"
       },
@@ -51,22 +51,5 @@ async function myFunc() {
 
 myFunc();
 
-// var myHeaders = new Headers();
-// myHeaders.append("Content-Type", "application/json");
 
-// var raw = JSON.stringify({
-//   "age": 90
-// });
-
-// var requestOptions = {
-//   method: 'POST',
-//   headers: myHeaders,
-//   body: raw,
-//   redirect: 'follow'
-// };
-
-// fetch("https://dev1.bankbuddy.me/charts/filter/", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
 
