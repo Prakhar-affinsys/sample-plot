@@ -18,7 +18,6 @@ async function fetch1(){
   return x;
 }
 
-
 async function myFunc() {
 
   fetch1().then(res=>{
@@ -45,37 +44,42 @@ async function myFunc() {
     }
     let trace1 = {
       x: x2,
-      y: yl
+      y: yl,
+      type: 'bar',
+      marker: {
+        color: '#C8A2C8',
+        line: {
+            width: 2
+        }
+    }
     };
     var layout = {font: {size: 12}};
     var config = {responsive: true};
     TESTER = document.getElementById('graph1');
-    Plotly.newPlot(TESTER, [trace1], layout, config);s
+    Plotly.newPlot(TESTER, [trace1], layout, config);
 
   })
-
-
 
 }
 
 myFunc();
 
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+// var myHeaders = new Headers();
+// myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify({
-  "age": 90
-});
+// var raw = JSON.stringify({
+//   "age": 90
+// });
 
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
+// var requestOptions = {
+//   method: 'POST',
+//   headers: myHeaders,
+//   body: raw,
+//   redirect: 'follow'
+// };
 
-fetch("https://dev1.bankbuddy.me/charts/filter/", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+// fetch("https://dev1.bankbuddy.me/charts/filter/", requestOptions)
+//   .then(response => response.text())
+//   .then(result => console.log(result))
+//   .catch(error => console.log('error', error));
 
