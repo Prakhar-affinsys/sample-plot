@@ -12,7 +12,7 @@ def filter(request):
   print(request.data)
   q1 = ps.sqldf("select * from df where age>50")
   print(q1)
-  return Response(q1)   
+  return Response(request.data)  
 
 @api_view(['GET'])
 def filter1(request):
