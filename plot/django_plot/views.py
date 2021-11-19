@@ -15,7 +15,7 @@ def filter(request):
   a = f"SELECT * FROM df WHERE age > ({q3})"
   q1 = ps.sqldf(a)
   print(q1)
-  return Response(request.data)  
+  return Response(q1)  
 
 @api_view(['GET'])
 def filter1(request):
