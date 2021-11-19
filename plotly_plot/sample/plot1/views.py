@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 # Create your views here.
 
-@api_view(['POST'])
+@api_view(['GET','POST'])
 def filter(request):
     df = request.data
     val = df['age']
