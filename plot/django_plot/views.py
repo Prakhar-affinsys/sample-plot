@@ -7,8 +7,9 @@ from django_plot import df
 import pandasql as ps
 # Create your views here.
 
-@api_view(['GET'])
+@api_view(['POST'])
 def filter(request):
+  print(request.data)
   q1 = ps.sqldf("select * from df where age>50")
   print(q1)
   return Response(q1)   
