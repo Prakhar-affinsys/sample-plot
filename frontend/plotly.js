@@ -24,23 +24,11 @@ async function myFunc() {
     console.log(res);
     D=res;
 
-    var a = D.id;
-    var b = D.Name;
-    var c = D.age;
-    var d = D.number;
-
-    var finalAra = [];
-    for(var i=0;i<a.length;i++){
-      var temp = [];
-      temp.push(a[i]);temp.push(b[i]);temp.push(c[i]);temp.push(d[i])
-      finalAra.push(temp);
-    }
-    console.log(finalAra);
-    for (let i = 0; i < finalAra.length; i++) {
-      xl.push(finalAra[0])
-      yl.push(finalAra[1])
-      x2.push(finalAra[2])
-      y2.push(finalAra[3])
+    for (let i = 0; i < D.length; i++) {
+      xl.push(D.id)
+      yl.push(D.name)
+      x2.push(D.age)
+      y2.push(D.number)
     }
     let trace1 = {
       x: x2,
