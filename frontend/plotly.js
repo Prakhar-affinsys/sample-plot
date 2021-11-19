@@ -9,7 +9,7 @@ let D=[];
 async function fetch1(){
   let x= await $.ajax({
     url: "https://dev1.bankbuddy.me/charts/filter/",
-      type:"GET",
+      type:"POST",
       headers:{
           "Content-type":"application/json"
       },
@@ -23,7 +23,6 @@ async function myFunc() {
   fetch1().then(res=>{
     console.log(res);
     D=res;
-
     for (let i = 0; i < D.length; i++) {
       xl.push(D.id)
       yl.push(D.name)
