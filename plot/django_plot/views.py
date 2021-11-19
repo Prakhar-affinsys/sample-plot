@@ -1,22 +1,36 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
+import pandas
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django_plot import df
 import pandasql as ps
+import pandas as pd
+#from models import Merchant
 import json
 # Create your views here.
 
 @api_view(['POST'])
 def filter(request):
   print(request.data)
-  q2 = request.data  
-  q3 = q2.get('age')
-  a = f"SELECT * FROM df WHERE age > ({q3})"
-  q1 = ps.sqldf(a)
-  print(q1)
-  return Response(q1)  
+  df = pd.DataFrame(Merchant.objects.all().values().filter())
+
+
+
+# def filter():
+#   query = {'age__lt'}
+#   qs = Merchant.objects.filter(**query)
+  
+  
+# @api_view(['POST'])
+# def filter(request):
+#   print(request.data)
+#   q2 = request.data  
+#   q3 = q2.get('age')
+#   a = f"SELECT * FROM df WHERE age > ({q3})"
+#   q1 = ps.sqldf(a)
+#   print(q1)
+#   return Response(q1)  
 
 @api_view(['GET'])
 def filter1(request):
@@ -35,3 +49,4 @@ def filter3(request):
   q4 = ps.sqldf("select name, age from df where age > 50 and number < 239813")
   print(q4)
   return Response(q4)
+
