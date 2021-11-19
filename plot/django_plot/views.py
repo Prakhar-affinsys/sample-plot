@@ -5,12 +5,15 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django_plot import df
 import pandasql as ps
+import json
 # Create your views here.
 
 @api_view(['POST'])
 def filter(request):
-  print(request.data)
-  q1 = ps.sqldf("select * from df where age>50")
+  q2 = request.data  
+  q3 = q2.get('age')
+  a = f"SELECT * FROM df WHERE age > ({q3})"
+  q1 = ps.sqldf(a)
   print(q1)
   return Response(request.data)  
 
