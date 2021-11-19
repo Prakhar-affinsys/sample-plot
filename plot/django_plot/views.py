@@ -10,6 +10,7 @@ import json
 
 @api_view(['POST'])
 def filter(request):
+  print(request.data)
   q2 = request.data  
   q3 = q2.get('age')
   a = f"SELECT * FROM df WHERE age > ({q3})"
