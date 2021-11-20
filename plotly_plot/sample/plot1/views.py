@@ -9,10 +9,10 @@ def filter(request):
     if(request.method == 'GET'):
         df = request.GET('age')
         print(df)
-        val = df['age']
-        qs = Merchant.objects.filter(age__gt = val).values()
-        print(qs)
-        return Response(qs)
+        # val = df['age']
+        # qs = Merchant.objects.filter(age__gt = val).values()
+        # print(qs)
+        return Response("qs")
 
 @api_view(['POST'])
 def filter1(request):
