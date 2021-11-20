@@ -30,7 +30,7 @@ selectFilter()
 document.querySelector("#submit").addEventListener("click", async function () {
   let age = $("#filterByAge").val()
   console.log(age)
-  document.querySelector("#default").hidden = true
+  document.querySelector("#default").classList.replace("show","hidden")
   await fetch1(age).then(res => {
     let D = res;
     let xl = [];
@@ -69,8 +69,8 @@ document.querySelector("#submit").addEventListener("click", async function () {
   })
 })
 
-function myFunc() {
-  fetch1("70").then(res => {
+async function myFunc() {
+  await fetch1("70").then(res => {
     let D = res;
     let xl = [];
     let yl = [];
@@ -100,15 +100,11 @@ function myFunc() {
       yaxis: {title: 'Age'}
     };
     let config = {responsive: true};
-    Plotly.newPlot(document.getElementById('default'), [trace1], layout, config);
-    xl = [];
-    yl = [];
-    x2 = [];
-    y2 = [];
+    Plotly.newPlot(document.querySelector('#default'), [trace1], layout, config);
   })
 }
 
-myFunc()
+window.addEventListener("load", myFunc)
 
 
 // for filter function bar graph
