@@ -35,6 +35,7 @@ async function myFunc() {
       yl.push(D[i]['name'])
       x2.push(D[i]['age'])
       y2.push(D[i]['number'])
+      count++;
     }
     let trace1 = {
       x: yl,
@@ -62,16 +63,16 @@ async function myFunc() {
 }
 
 async function myFunc1() {
-  fetch1().then(res=>{
-    console.log(res);
-    D=res;
-    for (let i = 0; i < D.length; i++) {
-      xl.push(D[i]['id'])
-      yl.push(D[i]['name'])
-      x2.push(D[i]['age'])
-      y2.push(D[i]['number'])
-      count++;
-    }
+  // fetch1().then(res=>{
+  //   console.log(res);
+  //   D=res;
+  //   for (let i = 0; i < D.length; i++) {
+  //     xl.push(D[i]['id'])
+  //     yl.push(D[i]['name'])
+  //     x2.push(D[i]['age'])
+  //     y2.push(D[i]['number'])
+  //     count++;
+  //   }
 var data = [
   {
       type: "indicator",
@@ -90,7 +91,7 @@ var data = [
 
   Plotly.newPlot('big_number', data, layout);
 
-  })
+  //})
 }
 
 myFunc();
