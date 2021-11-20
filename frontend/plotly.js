@@ -35,7 +35,6 @@ async function myFunc() {
       yl.push(D[i]['name'])
       x2.push(D[i]['age'])
       y2.push(D[i]['number'])
-      count++;
     }
     let trace1 = {
       x: yl,
