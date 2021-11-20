@@ -8,20 +8,20 @@ let D=[];
 
 async function fetch1(){
   let x= await $.ajax({
-      url: "https://dev1.bankbuddy.me/charts/filter/",
-      type:"POST",
-      // headers:{
-      //     "Content-type":"application/json"
-      // },
-      contentType: false,
-      processData: false,
-      data: {
-        "age": 89
-      },
-      success: function(res){
-        console.log(res)
-      }
-  });
+    url: "https://dev1.bankbuddy.me/charts/filter/",
+    type:"POST",
+    headers:{
+        "Content-type":"application/json"
+    },
+    contentType: false,
+    processData: false,
+    data: JSON.stringify({
+      "age": 89
+    }),
+    success: function(res){
+      console.log(res)
+    }
+});
   return x;
 }
 
