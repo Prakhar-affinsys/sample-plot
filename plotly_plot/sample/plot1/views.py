@@ -6,14 +6,15 @@ from rest_framework.response import Response
 
 @api_view(['GET','POST'])
 def filter(request):
-    # if(request.method == 'GET'):
-    #     df = request.GET['age']
-    df = request.data
-    print(df)
-    val = df['age']
-    qs = Merchant.objects.filter(age__gt = val).values()
-    print(qs)
-    return Response(qs)
+    if(request.method == 'POST'):
+        df = request.POST['age']
+        print(df)
+    # df = request.data
+    # print(df)
+    # val = df['age']
+    # qs = Merchant.objects.filter(age__gt = val).values()
+    # print(qs)
+    return Response("qs")
 
 @api_view(['POST'])
 def filter1(request):
