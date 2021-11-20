@@ -58,7 +58,7 @@ async function myFunc() {
 // for filter function big number graph
 async function fetch2(){
   let x= await $.ajax({
-    url: "https://dev1.bankbuddy.me/charts/filter/1",
+    url: "https://dev1.bankbuddy.me/charts/filter/",
     type:"POST",
     headers:{
         "Content-type":"application/json"
@@ -79,18 +79,20 @@ async function myFunc1() {
   fetch1().then(res=>{
     console.log(res);
     D=res;
+    count = 0;
     console.log(D)
     for (let i = 0; i < D.length; i++) {
       xl.push(D[i]['id'])
       yl.push(D[i]['name'])
       x2.push(D[i]['age'])
       y2.push(D[i]['number'])
+      count++;
     }
 var data = [
   {
       type: "indicator",
       mode: "number",
-      value: 400,
+      value: count,
       domain: { x: [0, 1], y: [0, 1] }
   }
   ];
@@ -99,7 +101,7 @@ var data = [
   paper_bgcolor: "lightgray",
   width: 600,
   height: 200,
-  margin: { t: 0, b: 0, l: 0, r: 0 }
+  margin: { t: 0, b: 0, l: 10, r: 10 }
   };
 
   Plotly.newPlot('big_number', data, layout);
