@@ -8,7 +8,6 @@ function selectFilter() {
     if (select.value !== "age") age.classList.add("hidden")
   })
 }
-let count = 0
 
 function fetch1(ageValue) {
   return $.ajax({
@@ -37,6 +36,7 @@ document.querySelector("#submit").addEventListener("click", async function () {
 
   await fetch1(age).then(res => {
     let D = res;
+    let count;
     let xl = [];
     let yl = [];
     let x2 = [];
@@ -46,6 +46,7 @@ document.querySelector("#submit").addEventListener("click", async function () {
       yl.push(D[i]['name'])
       x2.push(D[i]['age'])
       y2.push(D[i]['number'])
+      count++
     }
     let traceGraph1 = {
       x: yl,
