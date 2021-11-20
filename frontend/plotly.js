@@ -18,8 +18,8 @@ function selectFilter() {
   })
 }
 
-async function fetch1(ageValue) {
-  return await $.ajax({
+function fetch1(ageValue) {
+  return $.ajax({
     url: "https://dev1.bankbuddy.me/charts/filter/",
     type: "POST",
     headers: {
@@ -37,6 +37,7 @@ async function fetch1(ageValue) {
 }
 selectFilter()
 document.querySelector("#submit").addEventListener("click", async function () {
+  console.log(ageValue)
   await fetch1(ageValue).then(res => {
     let D = res;
     for (let i = 0; i < D.length; i++) {
