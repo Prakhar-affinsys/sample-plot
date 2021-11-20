@@ -8,11 +8,14 @@ let D=[];
 
 async function fetch1(){
   let x= await $.ajax({
-    url: "https://dev1.bankbuddy.me/charts/filter/",
+      url: "https://dev1.bankbuddy.me/charts/filter/",
       type:"GET",
       headers:{
           "Content-type":"application/json"
       },
+      success: function(res){
+        console.log(res)
+      }
   });
   return x;
 }
