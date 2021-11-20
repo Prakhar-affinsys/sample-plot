@@ -36,7 +36,6 @@ document.querySelector("#submit").addEventListener("click", async function () {
 
   await fetch1(age).then(res => {
     let D = res;
-    let count;
     let xl = [];
     let yl = [];
     let x2 = [];
@@ -46,7 +45,6 @@ document.querySelector("#submit").addEventListener("click", async function () {
       yl.push(D[i]['name'])
       x2.push(D[i]['age'])
       y2.push(D[i]['number'])
-      count++
     }
     let traceGraph1 = {
       x: yl,
@@ -70,7 +68,7 @@ document.querySelector("#submit").addEventListener("click", async function () {
       {
         type: "indicator",
         mode: "number",
-        value: count,
+        value: D.length,
         domain: {x: [0, 1], y: [0, 1]}
       }
     ];
