@@ -37,8 +37,9 @@ function fetch1(ageValue) {
 }
 selectFilter()
 document.querySelector("#submit").addEventListener("click", async function () {
-  console.log(ageValue)
-  await fetch1(ageValue).then(res => {
+  let age = $("#filterByAge").val()
+  console.log(age)
+  await fetch1(age).then(res => {
     let D = res;
     for (let i = 0; i < D.length; i++) {
       xl.push(D[i]['id'])
