@@ -1,21 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lGraph1 - Merchant v/s age
+ang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    .hidden{
+        display: none;
+    }
+  </style>
 </head>
 
 <body>
-    <h2>Graph1 - Merchant v/s age</h2>
+<h2>Graph1 - Merchant v/s age</h2>
+<select name="filter" id="filter">
+  <option value="0">Please select different filter</option>
+  <option value="id">Filter by ID</option>
+  <option value="name">Filter by Name</option>
+  <option value="age">Filter by Age</option>
+  <option value="number">Filter by Number</option>
+</select>
+
+<div style="margin-top: 1rem" class="filterByAge hidden" >
+  <label>Age</label>
+  <input type="text" id="filterByAge">
+  <input type="button" id="submit" value="Submit">
+</div>
 <div id="graph1"></div>
-   <h2>Graph2 - Total Count based on age</h2>
+<h2>Graph2 - Total Count based on age</h2>
 <div id="big_number"></div>
 <script src="plotly.js"></script>
+
 </body>
 
 </html>

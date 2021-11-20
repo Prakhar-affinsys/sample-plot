@@ -5,6 +5,17 @@ let x2 = [];
 let y2 = [];
 let D=[];
 let count = 0;
+
+const select = document.querySelector("#filter")
+let age = document.querySelector(".filterByAge")
+let ageValue = document.querySelector("#filterByAge").value
+function selectFilter(){
+  select.addEventListener("change",()=>{
+    if(select.value === "age") age.classList.toggle("hidden")
+  })
+}
+selectFilter()
+document.querySelector("#submit").addEventListener("click", myFunc)
 // for filter function bar graph
 async function fetch1(){
   let x= await $.ajax({
@@ -16,7 +27,7 @@ async function fetch1(){
     contentType: false,
     processData: false,
     data: JSON.stringify({
-      "age": 70
+      "age": ageValue
     }),
     success: function(res){
       console.log(res)
@@ -58,40 +69,37 @@ async function myFunc() {
     Plotly.newPlot(TESTER, [trace1], layout, config);
 
   })
-
 }
 
-async function myFunc1() {
-  fetch1().then(res=>{
-    console.log(res);
-    D=res;
-    for (let i = 0; i < D.length; i++) {
-      xl.push(D[i]['id'])
-      yl.push(D[i]['name'])
-      x2.push(D[i]['age'])
-      y2.push(D[i]['number'])
-      count++;
-    }
-var data = [
-  {
-      type: "indicator",
-      mode: "number",
-      value: count,
-      domain: { x: [0, 1], y: [0, 1] }
-  }
-  ];
-
-  var layout = {
-  paper_bgcolor: "lightgray",
-  width: 600,
-  height: 200,
-  margin: { t: 0, b: 0, l: 10, r: 10 },
-  };
-
-  Plotly.newPlot('big_number', data, layout);
-
-  })
-}
-
-myFunc();
-myFunc1();
+// async function myFunc1() {
+//   fetch1().then(res=>{
+//     console.log(res);
+//     D=res;
+//     for (let i = 0; i < D.length; i++) {
+//       xl.push(D[i]['id'])
+//       yl.push(D[i]['name'])
+//       x2.push(D[i]['age'])
+//       y2.push(D[i]['number'])
+//       count++;
+//     }
+// var data = [
+//   {
+//       type: "indicator",
+//       mode: "number",
+//       value: count,
+//       domain: { x: [0, 1], y: [0, 1] }
+//   }
+//   ];
+//
+//   var layout = {
+//   paper_bgcolor: "lightgray",
+//   width: 600,
+//   height: 200,
+//   margin: { t: 0, b: 0, l: 10, r: 10 },
+//   };
+//
+//   Plotly.newPlot('big_number', data, layout);
+//
+//   })
+// }
+// myFunc1();
