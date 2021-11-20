@@ -5,7 +5,6 @@ let y2 = [];
 let D = [];
 let count = 0;
 let val;
-let trace1, layout, config;
 
 const select = document.querySelector("#filter")
 let age = document.querySelector(".filterByAge")
@@ -46,7 +45,7 @@ document.querySelector("#submit").addEventListener("click", async function () {
       x2.push(D[i]['age'])
       y2.push(D[i]['number'])
     }
-    trace1 = {
+    let trace1 = {
       x: yl,
       y: x2,
       type: 'bar',
@@ -57,13 +56,13 @@ document.querySelector("#submit").addEventListener("click", async function () {
         }
       }
     };
-    layout = {
+    let layout = {
       font: {size: 12},
       title: 'Merchant v/s age',
       xaxis: {title: 'Merchant'},
       yaxis: {title: 'Age'}
     };
-    config = {responsive: true};
+    let config = {responsive: true};
     Plotly.newPlot(document.getElementById('graph1'), [trace1], layout, config);
   })
 
