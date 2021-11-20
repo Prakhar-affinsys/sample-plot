@@ -58,11 +58,30 @@ async function myFunc() {
     TESTER = document.getElementById('graph1');
     Plotly.newPlot(TESTER, [trace1], layout, config);
 
+    // big number graph - 2
+    var data = [
+      {
+          type: "indicator",
+          mode: "number",
+          value: count,
+          domain: { x: [0, 1], y: [0, 1] }
+      }
+      ];
+    
+      var layout = {
+      paper_bgcolor: "lightgray",
+      width: 600,
+      height: 200,
+      margin: { t: 0, b: 0, l: 10, r: 10 },
+      };
+    
+      Plotly.newPlot('big_number', data, layout);
+
   })
 
 }
 
-async function myFunc1() {
+//async function myFunc1() {
   // fetch1().then(res=>{
   //   console.log(res);
   //   D=res;
@@ -73,26 +92,10 @@ async function myFunc1() {
   //     y2.push(D[i]['number'])
   //     count++;
   //   }
-var data = [
-  {
-      type: "indicator",
-      mode: "number",
-      value: count,
-      domain: { x: [0, 1], y: [0, 1] }
-  }
-  ];
 
-  var layout = {
-  paper_bgcolor: "lightgray",
-  width: 600,
-  height: 200,
-  margin: { t: 0, b: 0, l: 10, r: 10 },
-  };
-
-  Plotly.newPlot('big_number', data, layout);
 
   //})
-}
+//}
 
 myFunc();
 myFunc1();
