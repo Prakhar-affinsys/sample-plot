@@ -37,8 +37,8 @@ async function myFunc() {
       y2.push(D.number)
     }
     let trace1 = {
-      x: x2,
-      y: yl,
+      x: yl,
+      y: x2,
       type: 'bar',
       marker: {
         color: '#C8A2C8',
