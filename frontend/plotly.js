@@ -13,7 +13,6 @@ async function fetch1(){
       headers:{
           "Content-type":"application/json"
       },
-      
   });
   return x;
 }
@@ -50,6 +49,3 @@ async function myFunc() {
 }
 
 myFunc();
-
-
-
