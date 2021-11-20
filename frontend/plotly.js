@@ -10,9 +10,11 @@ async function fetch1(){
   let x= await $.ajax({
       url: "https://dev1.bankbuddy.me/charts/filter/",
       type:"POST",
-      headers:{
-          "Content-type":"application/json"
-      },
+      // headers:{
+      //     "Content-type":"application/json"
+      // },
+      contentType: false,
+      processData: false,
       data: {
         "age": 89
       },
