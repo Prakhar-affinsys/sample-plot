@@ -16,7 +16,7 @@ async function fetch1(){
     contentType: false,
     processData: false,
     data: JSON.stringify({
-      "age": 70
+      "age": 85
     }),
     success: function(res){
       console.log(res)
@@ -87,8 +87,8 @@ async function myFunc() {
       }]
       
       var layout = {
-        height: 400,
-        width: 400,
+        height: 600,
+        width: 600,
         showlegend: false
         }
       
@@ -115,4 +115,4 @@ async function myFunc() {
 //}
 
 myFunc();
-myFunc1();
+//myFunc1();
