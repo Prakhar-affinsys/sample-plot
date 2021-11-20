@@ -1,11 +1,3 @@
-let xl = [];
-let yl = [];
-let x2 = [];
-let y2 = [];
-let D = [];
-let count = 0;
-let val;
-
 const select = document.querySelector("#filter")
 let age = document.querySelector(".filterByAge")
 
@@ -39,6 +31,10 @@ document.querySelector("#submit").addEventListener("click", async function () {
   console.log(age)
   await fetch1(age).then(res => {
     let D = res;
+    let xl = [];
+    let yl = [];
+    let x2 = [];
+    let y2 = [];
     for (let i = 0; i < D.length; i++) {
       xl.push(D[i]['id'])
       yl.push(D[i]['name'])
@@ -64,9 +60,11 @@ document.querySelector("#submit").addEventListener("click", async function () {
     };
     let config = {responsive: true};
     Plotly.newPlot(document.getElementById('graph1'), [trace1], layout, config);
+    xl = [];
+    yl = [];
+    x2 = [];
+    y2 = [];
   })
-
-
 })
 
 // for filter function bar graph
