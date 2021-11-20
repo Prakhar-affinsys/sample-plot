@@ -8,12 +8,12 @@ from rest_framework.response import Response
 def filter(request):
     if(request.method == 'POST'):
         df = request.data['age']
-        print(df)
+        #print(df)
     # df = request.data
     # print(df)
     # val = df['age']
-    # qs = Merchant.objects.filter(age__gt = val).values()
-    # print(qs)
+        qs = Merchant.objects.filter(age__gt = val).values()
+        print(qs)
     return Response("qs")
 
 @api_view(['POST'])
