@@ -13,6 +13,9 @@ async function fetch1(){
       headers:{
           "Content-type":"application/json"
       },
+      data: {
+        "age": 89
+      },
       success: function(res){
         console.log(res)
       }
