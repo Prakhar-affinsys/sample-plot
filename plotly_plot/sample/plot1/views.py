@@ -14,7 +14,7 @@ def filter(request):
     # val = df['age']
         qs = Merchant.objects.filter(age__gt = df).values()
         print(qs)
-    return Response("qs")
+    return Response(qs)
 
 @api_view(['POST'])
 def filter1(request):
