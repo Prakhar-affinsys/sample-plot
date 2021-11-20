@@ -18,9 +18,9 @@ def filter(request):
 
 @api_view(['POST'])
 def filter1(request):
-    df1 = request.data
-    val1 = df1['age']
-    qs1 = Merchant.objects.filter(age__lt = val1).values()
-    ls1 = len(qs1)
-    print(ls1)
-    return Response("ok")
+    if(request.method == 'POST'):
+        df1 = request.data['age']
+        qs1 = Merchant.objects.filter(age__lt = df1).values()
+        ls1 = len(qs1)
+        print(ls1)
+    return Response(ls1)
