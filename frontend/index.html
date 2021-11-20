@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<html lGraph1 - Merchant v/s age
-ang="en">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="vendor/plotly-2.6.3.min.js"></script>
+  <script src="vendor/jquery-3.6.0.min.js"></script>
   <style>
-    .hidden{
-        display: none;
-    }
+      .hidden {
+          display: none;
+      }
   </style>
 </head>
 
@@ -28,7 +25,7 @@ ang="en">
   <option value="number">Filter by Number</option>
 </select>
 
-<div style="margin-top: 1rem" class="filterByAge hidden" >
+<div style="margin-top: 1rem" class="filterByAge hidden">
   <label>Age</label>
   <input type="text" id="filterByAge">
   <input type="button" id="submit" value="Submit">
