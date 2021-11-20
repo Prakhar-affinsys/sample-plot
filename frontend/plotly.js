@@ -16,7 +16,7 @@ async function fetch1(){
     contentType: false,
     processData: false,
     data: JSON.stringify({
-      "age": 89
+      "age": 70
     }),
     success: function(res){
       console.log(res)
