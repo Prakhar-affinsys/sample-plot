@@ -8,6 +8,7 @@ function selectFilter() {
     if (select.value !== "age") age.classList.add("hidden")
   })
 }
+let count = 0
 
 function fetch1(ageValue) {
   return $.ajax({
