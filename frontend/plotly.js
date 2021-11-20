@@ -125,7 +125,7 @@ async function myFunc() {
       {
         type: "indicator",
         mode: "number",
-        value: count,
+        value: D.length,
         domain: {x: [0, 1], y: [0, 1]}
       }
     ];
@@ -143,74 +143,3 @@ async function myFunc() {
 }
 
 window.addEventListener("load", myFunc)
-
-
-// for filter function bar graph
-
-// async function myFunc() {
-//
-//   fetch1().then(res=>{
-//     console.log(res);
-//     D=res;
-//     for (let i = 0; i < D.length; i++) {
-//       xl.push(D[i]['id'])
-//       yl.push(D[i]['name'])
-//       x2.push(D[i]['age'])
-//       y2.push(D[i]['number'])
-//     }
-//     let trace1 = {
-//       x: yl,
-//       y: x2,
-//       type: 'bar',
-//       marker: {
-//         color: '#C8A2C8',
-//         line: {
-//             width: 2
-//         }
-//     }
-//     };
-//     var layout = {
-//     font: {size: 12}, 
-//     title: 'Merchant v/s age',
-//     xaxis: {title: 'Merchant'},
-//     yaxis: {title: 'Age'}
-//     };
-//     var config = {responsive: true};
-//     TESTER = document.getElementById('graph1');
-//     Plotly.newPlot(TESTER, [trace1], layout, config);
-//
-//   })
-// }
-
-// async function myFunc1() {
-//   fetch1().then(res=>{
-//     console.log(res);
-//     D=res;
-//     for (let i = 0; i < D.length; i++) {
-//       xl.push(D[i]['id'])
-//       yl.push(D[i]['name'])
-//       x2.push(D[i]['age'])
-//       y2.push(D[i]['number'])
-//       count++;
-//     }
-// var data = [
-//   {
-//       type: "indicator",
-//       mode: "number",
-//       value: count,
-//       domain: { x: [0, 1], y: [0, 1] }
-//   }
-//   ];
-//
-//   var layout = {
-//   paper_bgcolor: "lightgray",
-//   width: 600,
-//   height: 200,
-//   margin: { t: 0, b: 0, l: 10, r: 10 },
-//   };
-//
-//   Plotly.newPlot('big_number', data, layout);
-//
-//   })
-// }
-// myFunc1();
