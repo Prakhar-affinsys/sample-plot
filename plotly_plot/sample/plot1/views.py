@@ -7,7 +7,7 @@ from rest_framework.response import Response
 @api_view(['GET','POST'])
 def filter(request):
     if(request.method == 'GET'):
-        df = request.GET('age')
+        df = request.GET['age']
         print(df)
         # val = df['age']
         # qs = Merchant.objects.filter(age__gt = val).values()
