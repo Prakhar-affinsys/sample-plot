@@ -25,10 +25,12 @@ function fetch1(ageValue) {
     }
   });
 }
+
 selectFilter()
 document.querySelector("#submit").addEventListener("click", async function () {
   let age = $("#filterByAge").val()
   console.log(age)
+  document.querySelector("#default").hidden = true
   await fetch1(age).then(res => {
     let D = res;
     let xl = [];
@@ -66,6 +68,48 @@ document.querySelector("#submit").addEventListener("click", async function () {
     y2 = [];
   })
 })
+
+function myFunc() {
+  fetch1("70").then(res => {
+    let D = res;
+    let xl = [];
+    let yl = [];
+    let x2 = [];
+    let y2 = [];
+    for (let i = 0; i < D.length; i++) {
+      xl.push(D[i]['id'])
+      yl.push(D[i]['name'])
+      x2.push(D[i]['age'])
+      y2.push(D[i]['number'])
+    }
+    let trace1 = {
+      x: yl,
+      y: x2,
+      type: 'bar',
+      marker: {
+        color: '#C8A2C8',
+        line: {
+          width: 2
+        }
+      }
+    };
+    let layout = {
+      font: {size: 12},
+      title: 'Merchant v/s age',
+      xaxis: {title: 'Merchant'},
+      yaxis: {title: 'Age'}
+    };
+    let config = {responsive: true};
+    Plotly.newPlot(document.getElementById('default'), [trace1], layout, config);
+    xl = [];
+    yl = [];
+    x2 = [];
+    y2 = [];
+  })
+}
+
+myFunc()
+
 
 // for filter function bar graph
 
