@@ -1,6 +1,7 @@
 const select = document.querySelector("#filter")
 let age = document.querySelector(".filterByAge")
-
+const defaultGraph1 = document.querySelector("#defaultGraph1")
+const defaultBigNumber = document.querySelector("#defaultBigNumber")
 function selectFilter() {
   select.addEventListener("change", () => {
     if (select.value === "age") age.classList.remove("hidden")
@@ -30,7 +31,9 @@ selectFilter()
 document.querySelector("#submit").addEventListener("click", async function () {
   let age = $("#filterByAge").val()
   console.log(age)
-  document.querySelector("#default").classList.replace("show","hidden")
+  defaultGraph1.innerHTML = "Loading...."
+  defaultBigNumber.innerHTML = "Loading...."
+
   await fetch1(age).then(res => {
     let D = res;
     let xl = [];
@@ -43,7 +46,7 @@ document.querySelector("#submit").addEventListener("click", async function () {
       x2.push(D[i]['age'])
       y2.push(D[i]['number'])
     }
-    let trace1 = {
+    let traceGraph1 = {
       x: yl,
       y: x2,
       type: 'bar',
@@ -54,20 +57,39 @@ document.querySelector("#submit").addEventListener("click", async function () {
         }
       }
     };
-    let layout = {
+    let layoutGraph1 = {
       font: {size: 12},
       title: 'Merchant v/s age',
       xaxis: {title: 'Merchant'},
       yaxis: {title: 'Age'}
     };
-    let config = {responsive: true};
-    Plotly.newPlot(document.getElementById('graph1'), [trace1], layout, config);
+
+    let dataBigNumber = [
+      {
+        type: "indicator",
+        mode: "number",
+        value: count,
+        domain: {x: [0, 1], y: [0, 1]}
+      }
+    ];
+
+    let layoutBigNumber = {
+      paper_bgcolor: "lightgray",
+      width: 600,
+      height: 200,
+      margin: { t: 0, b: 0, l: 10, r: 10 },
+    };
+
+    let configGraph1 = {responsive: true};
+    Plotly.newPlot(document.getElementById('graph1'), [traceGraph1], layoutGraph1, configGraph1);
+    Plotly.newPlot(document.getElementById('big_number'), dataBigNumber, layoutBigNumber);
     xl = [];
     yl = [];
     x2 = [];
     y2 = [];
   })
 })
+
 
 async function myFunc() {
   await fetch1("70").then(res => {
@@ -99,8 +121,24 @@ async function myFunc() {
       xaxis: {title: 'Merchant'},
       yaxis: {title: 'Age'}
     };
+    let dataBigNumber = [
+      {
+        type: "indicator",
+        mode: "number",
+        value: count,
+        domain: {x: [0, 1], y: [0, 1]}
+      }
+    ];
+
+    let layoutBigNumber = {
+      paper_bgcolor: "lightgray",
+      width: 600,
+      height: 200,
+      margin: { t: 0, b: 0, l: 10, r: 10 },
+    };
     let config = {responsive: true};
-    Plotly.newPlot(document.querySelector('#default'), [trace1], layout, config);
+    Plotly.newPlot(document.querySelector('#defaultGraph1'), [trace1], layout, config);
+    Plotly.newPlot(document.querySelector('#defaultBigNumber'), dataBigNumber, layoutBigNumber);
   })
 }
 

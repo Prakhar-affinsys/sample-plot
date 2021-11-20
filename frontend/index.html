@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<h2>Graph1 - Merchant v/s age</h2>
+<h2>Filter Box</h2>
 <select name="filter" id="filter">
   <option value="0">Please select different filter</option>
   <option value="id">Filter by ID</option>
@@ -27,15 +27,16 @@
   <option value="age">Filter by Age</option>
   <option value="number">Filter by Number</option>
 </select>
-
 <div style="margin-top: 1rem" class="filterByAge hidden">
   <label>Age</label>
   <input type="text" id="filterByAge">
   <input type="button" id="submit" value="Submit">
 </div>
-<div id="default" class="show"></div>
+<h2>Graph1 - Merchant v/s age</h2>
+<div id="defaultGraph1" class="show"></div>
 <div id="graph1"></div>
 <h2>Graph2 - Total Count based on age</h2>
+<div id="defaultBigNumber" class="show"></div>
 <div id="big_number"></div>
 <h2>Graph3</h2>
 <div id="pie_chart"></div>
