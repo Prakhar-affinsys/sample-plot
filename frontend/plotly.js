@@ -9,7 +9,6 @@ let trace1, layout, config;
 
 const select = document.querySelector("#filter")
 let age = document.querySelector(".filterByAge")
-let ageValue = document.querySelector("#filterByAge").value
 
 function selectFilter() {
   select.addEventListener("change", () => {
@@ -65,9 +64,10 @@ document.querySelector("#submit").addEventListener("click", async function () {
       yaxis: {title: 'Age'}
     };
     config = {responsive: true};
+    Plotly.newPlot(document.getElementById('graph1'), [trace1], layout, config);
   })
 
-  await Plotly.newPlot(document.getElementById('graph1'), [trace1], layout, config);
+
 })
 
 // for filter function bar graph
