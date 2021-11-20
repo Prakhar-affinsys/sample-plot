@@ -7,7 +7,7 @@ from rest_framework.response import Response
 @api_view(['GET','POST'])
 def filter(request):
     if(request.method == 'POST'):
-        df = request.POST['age']
+        df = request.data['age']
         print(df)
     # df = request.data
     # print(df)
