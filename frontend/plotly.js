@@ -1,75 +1,109 @@
-
 let xl = [];
 let yl = [];
 let x2 = [];
 let y2 = [];
-let D=[];
+let D = [];
 let count = 0;
+let val;
+let trace1, layout, config;
 
 const select = document.querySelector("#filter")
 let age = document.querySelector(".filterByAge")
 let ageValue = document.querySelector("#filterByAge").value
-function selectFilter(){
-  select.addEventListener("change",()=>{
-    if(select.value === "age") age.classList.toggle("hidden")
+
+function selectFilter() {
+  select.addEventListener("change", () => {
+    if (select.value === "age") age.classList.remove("hidden")
+    if (select.value !== "age") age.classList.add("hidden")
   })
 }
-selectFilter()
-document.querySelector("#submit").addEventListener("click", myFunc)
-// for filter function bar graph
-async function fetch1(){
-  let x= await $.ajax({
+
+async function fetch1(ageValue) {
+  return await $.ajax({
     url: "https://dev1.bankbuddy.me/charts/filter/",
-    type:"POST",
-    headers:{
-        "Content-type":"application/json"
+    type: "POST",
+    headers: {
+      "Content-type": "application/json"
     },
     contentType: false,
     processData: false,
     data: JSON.stringify({
       "age": ageValue
     }),
-    success: function(res){
+    success: function (res) {
       console.log(res)
     }
-});
-  return x;
+  });
 }
-
-async function myFunc() {
-
-  fetch1().then(res=>{
-    console.log(res);
-    D=res;
+selectFilter()
+document.querySelector("#submit").addEventListener("click", async function () {
+  await fetch1(ageValue).then(res => {
+    let D = res;
     for (let i = 0; i < D.length; i++) {
       xl.push(D[i]['id'])
       yl.push(D[i]['name'])
       x2.push(D[i]['age'])
       y2.push(D[i]['number'])
     }
-    let trace1 = {
+    trace1 = {
       x: yl,
       y: x2,
       type: 'bar',
       marker: {
         color: '#C8A2C8',
         line: {
-            width: 2
+          width: 2
         }
-    }
+      }
     };
-    var layout = {
-    font: {size: 12}, 
-    title: 'Merchant v/s age',
-    xaxis: {title: 'Merchant'},
-    yaxis: {title: 'Age'}
+    layout = {
+      font: {size: 12},
+      title: 'Merchant v/s age',
+      xaxis: {title: 'Merchant'},
+      yaxis: {title: 'Age'}
     };
-    var config = {responsive: true};
-    TESTER = document.getElementById('graph1');
-    Plotly.newPlot(TESTER, [trace1], layout, config);
-
+    config = {responsive: true};
   })
-}
+
+  await Plotly.newPlot(document.getElementById('graph1'), [trace1], layout, config);
+})
+
+// for filter function bar graph
+
+// async function myFunc() {
+//
+//   fetch1().then(res=>{
+//     console.log(res);
+//     D=res;
+//     for (let i = 0; i < D.length; i++) {
+//       xl.push(D[i]['id'])
+//       yl.push(D[i]['name'])
+//       x2.push(D[i]['age'])
+//       y2.push(D[i]['number'])
+//     }
+//     let trace1 = {
+//       x: yl,
+//       y: x2,
+//       type: 'bar',
+//       marker: {
+//         color: '#C8A2C8',
+//         line: {
+//             width: 2
+//         }
+//     }
+//     };
+//     var layout = {
+//     font: {size: 12}, 
+//     title: 'Merchant v/s age',
+//     xaxis: {title: 'Merchant'},
+//     yaxis: {title: 'Age'}
+//     };
+//     var config = {responsive: true};
+//     TESTER = document.getElementById('graph1');
+//     Plotly.newPlot(TESTER, [trace1], layout, config);
+//
+//   })
+// }
 
 // async function myFunc1() {
 //   fetch1().then(res=>{
