@@ -59,7 +59,7 @@ async function myFunc() {
     Plotly.newPlot(TESTER, [trace1], layout, config);
 
     // big number graph - 2
-    var data = [
+    var data1 = [
       {
           type: "indicator",
           mode: "number",
@@ -68,14 +68,31 @@ async function myFunc() {
       }
       ];
     
-      var layout = {
+      var layout1 = {
       paper_bgcolor: "lightgray",
       width: 600,
       height: 200,
       margin: { t: 0, b: 0, l: 10, r: 10 },
       };
     
-      Plotly.newPlot('big_number', data, layout);
+      Plotly.newPlot('big_number', data1, layout1);
+
+      var data = [{
+        type: "pie",
+        values: y2,
+        labels: yl,
+        textinfo: "label+percent",
+        textposition: "outside",
+        automargin: true
+      }]
+      
+      var layout = {
+        height: 400,
+        width: 400,
+        showlegend: false
+        }
+      
+      Plotly.newPlot('pie_chart', data, layout)
 
   })
 
