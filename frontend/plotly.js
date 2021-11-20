@@ -31,10 +31,10 @@ async function myFunc() {
     console.log(res);
     D=res;
     for (let i = 0; i < D.length; i++) {
-      xl.push(D.id)
-      yl.push(D.name)
-      x2.push(D.age)
-      y2.push(D.number)
+      xl.push(D['id'])
+      yl.push(D['name'])
+      x2.push(D['age'])
+      y2.push(D['number'])
     }
     let trace1 = {
       x: yl,
