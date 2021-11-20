@@ -47,7 +47,12 @@ async function myFunc() {
         }
     }
     };
-    var layout = {font: {size: 12}};
+    var layout = {
+    font: {size: 12}, 
+    title: 'Merchant v/s age',
+    xaxis: {title: 'Merchant'},
+    yaxis: {title: 'Age'}
+    };
     var config = {responsive: true};
     TESTER = document.getElementById('graph1');
     Plotly.newPlot(TESTER, [trace1], layout, config);
@@ -80,7 +85,7 @@ var data = [
   paper_bgcolor: "lightgray",
   width: 600,
   height: 200,
-  margin: { t: 0, b: 0, l: 10, r: 10 }
+  margin: { t: 0, b: 0, l: 10, r: 10 },
   };
 
   Plotly.newPlot('big_number', data, layout);
