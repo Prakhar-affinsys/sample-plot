@@ -12,7 +12,7 @@ def filter(request):
     # df = request.data
     # print(df)
     # val = df['age']
-        qs = Merchant.objects.filter(age__gt = val).values()
+        qs = Merchant.objects.filter(age__gt = df).values()
         print(qs)
     return Response("qs")
 
