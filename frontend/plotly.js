@@ -4,7 +4,7 @@ let yl = [];
 let x2 = [];
 let y2 = [];
 let D=[];
-
+let count = 0;
 // for filter function bar graph
 async function fetch1(){
   let x= await $.ajax({
@@ -35,6 +35,7 @@ async function myFunc() {
       yl.push(D[i]['name'])
       x2.push(D[i]['age'])
       y2.push(D[i]['number'])
+      count++;
     }
     let trace1 = {
       x: yl,
@@ -55,39 +56,8 @@ async function myFunc() {
   })
 
 }
-// for filter function big number graph
-async function fetch2(){
-  let x= await $.ajax({
-    url: "https://dev1.bankbuddy.me/charts/filter/",
-    type:"POST",
-    headers:{
-        "Content-type":"application/json"
-    },
-    contentType: false,
-    processData: false,
-    data: JSON.stringify({
-      "age": 70
-    }),
-    success: function(res){
-      console.log(res)
-    }
-});
-  return x;
-}
-async function myFunc1() {
 
-  fetch1().then(res=>{
-    console.log(res);
-    D=res;
-    count = 0;
-    console.log(D)
-    for (let i = 0; i < D.length; i++) {
-      xl.push(D[i]['id'])
-      yl.push(D[i]['name'])
-      x2.push(D[i]['age'])
-      y2.push(D[i]['number'])
-      count++;
-    }
+async function myFunc1() {
 var data = [
   {
       type: "indicator",
@@ -105,7 +75,7 @@ var data = [
   };
 
   Plotly.newPlot('big_number', data, layout);
-})
+
 
 }
 
