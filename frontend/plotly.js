@@ -9,7 +9,7 @@ let D=[];
 async function fetch1(){
   let x= await $.ajax({
       url: "https://dev1.bankbuddy.me/charts/filter/",
-      type:"GET",
+      type:"POST",
       headers:{
           "Content-type":"application/json"
       },
