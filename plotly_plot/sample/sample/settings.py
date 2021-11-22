@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-z!gwm0^x-b%c$&j4avn5_5b2z(arq@h2u__39v5qzy@6#=gyo3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dev1.bankbuddy.me']
+ALLOWED_HOSTS = ['dev4.bankbuddy.me']
 
 
 # Application definition
