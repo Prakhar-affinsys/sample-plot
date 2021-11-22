@@ -103,7 +103,7 @@ document.querySelector("#submit").addEventListener("click", async function () {
     let configGraph1 = {responsive: true};
     Plotly.newPlot(document.getElementById('graph1'), [traceGraph1], layoutGraph1, configGraph1);
     Plotly.newPlot(document.getElementById('big_number'), dataBigNumber, layoutBigNumber);
-    Plotly.newPlot(document.getElementById('pie_chart'), dataPieChart, layoutPieChart);
+    Plotly.newPlot(document.getElementById('pieChart'), dataPieChart, layoutPieChart);
     xl = [];
     yl = [];
     x2 = [];
