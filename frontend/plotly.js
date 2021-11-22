@@ -2,6 +2,8 @@ const select = document.querySelector("#filter")
 let age = document.querySelector(".filterByAge")
 const defaultGraph1 = document.querySelector("#defaultGraph1")
 const defaultBigNumber = document.querySelector("#defaultBigNumber")
+// for pie chart
+const defaultPieChart = document.querySelector("#defaultPieChart")
 function selectFilter() {
   select.addEventListener("change", () => {
     if (select.value === "age") age.classList.remove("hidden")
@@ -82,9 +84,27 @@ document.querySelector("#submit").addEventListener("click", async function () {
       margin: { t: 0, b: 0, l: 10, r: 10 },
     };
 
+    // defining data and layout for pie chart
+
+    var dataPieChart = [{
+      type: "pie",
+      values: y2,
+      labels: yl,
+      textinfo: "label+percent",
+      textposition: "outside",
+      automargin: true
+    }];
+    
+    var layoutPieChart = {
+      height: 600,
+      width: 600,
+      showlegend: false
+      };
+
     let configGraph1 = {responsive: true};
     Plotly.newPlot(document.getElementById('graph1'), [traceGraph1], layoutGraph1, configGraph1);
     Plotly.newPlot(document.getElementById('big_number'), dataBigNumber, layoutBigNumber);
+    Plotly.newPlot(document.getElementById('pie_chart'), dataPieChart, layoutPieChart);
     xl = [];
     yl = [];
     x2 = [];
@@ -138,9 +158,28 @@ async function myFunc() {
       height: 200,
       margin: { t: 0, b: 0, l: 10, r: 10 },
     };
+
+    // defining data and layout for pie chart
+
+    var dataPieChart = [{
+      type: "pie",
+      values: y2,
+      labels: yl,
+      textinfo: "label+percent",
+      textposition: "outside",
+      automargin: true
+    }];
+    
+    var layoutPieChart = {
+      height: 600,
+      width: 600,
+      showlegend: false
+      };
+
     let config = {responsive: true};
     Plotly.newPlot(document.querySelector('#defaultGraph1'), [trace1], layout, config);
     Plotly.newPlot(document.querySelector('#defaultBigNumber'), dataBigNumber, layoutBigNumber);
+    Plotly.newPlot(document.querySelector('#defaultPieChart'), dataPieChart, layoutPieChart);
   })
 }
 
