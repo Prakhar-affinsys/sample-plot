@@ -38,6 +38,7 @@ document.querySelector("#submit").addEventListener("click", async function () {
   await fetch1(age).then(res => {
     defaultGraph1.innerHTML= ""
     defaultBigNumber.innerHTML = ""
+    defaultPieChart.innerHTML = ""
     let D = res;
     let xl = [];
     let yl = [];
