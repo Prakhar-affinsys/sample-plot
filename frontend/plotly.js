@@ -11,7 +11,7 @@ function selectFilter() {
 
 function fetch1(ageValue) {
   return $.ajax({
-    url: "https://dev1.bankbuddy.me/charts/filter/",
+    url: "https://dev4.bankbuddy.me/charts/filter/",
     type: "POST",
     headers: {
       "Content-type": "application/json"
