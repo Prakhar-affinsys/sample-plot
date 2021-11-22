@@ -35,6 +35,8 @@ document.querySelector("#submit").addEventListener("click", async function () {
   defaultBigNumber.innerHTML = "Loading...."
 
   await fetch1(age).then(res => {
+    defaultGraph1.innerHTML= ""
+    defaultBigNumber.innerHTML = ""
     let D = res;
     let xl = [];
     let yl = [];
