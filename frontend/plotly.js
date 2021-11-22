@@ -1,7 +1,9 @@
 const select = document.querySelector("#filter")
 let age = document.querySelector(".filterByAge")
+
 const defaultGraph1 = document.querySelector("#defaultGraph1")
 const defaultBigNumber = document.querySelector("#defaultBigNumber")
+// Add More Graph Add new const
 function selectFilter() {
   select.addEventListener("change", () => {
     if (select.value === "age") age.classList.remove("hidden")
@@ -31,9 +33,6 @@ selectFilter()
 document.querySelector("#submit").addEventListener("click", async function () {
   let age = $("#filterByAge").val()
   console.log(age)
-  defaultGraph1.innerHTML = "Loading...."
-  defaultBigNumber.innerHTML = "Loading...."
-
   await fetch1(age).then(res => {
     defaultGraph1.innerHTML= ""
     defaultBigNumber.innerHTML = ""
