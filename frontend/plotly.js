@@ -5,6 +5,7 @@ const defaultGraph1 = document.querySelector("#defaultGraph1")
 const defaultBigNumber = document.querySelector("#defaultBigNumber")
 // for pie chart
 const defaultPieChart = document.querySelector("#defaultPieChart")
+const defaultPieChart = document.querySelector("#defaultTableChart")
 // Add More Graph Add new const
 function selectFilter() {
   select.addEventListener("change", () => {
@@ -101,10 +102,31 @@ document.querySelector("#submit").addEventListener("click", async function () {
       showlegend: false
       };
 
+    // defining data for table chart
+    
+    var dataTable = [{
+      type: 'table',
+      header: {
+          values: [["<b>xl</b>"], ["<b>x2</b>"],
+                      ["<b>yl</b>"], ["<b>y2</b>"]],
+          align: "center",
+          line: {width: 1, color: 'black'},
+          fill: {color: "grey"},
+          font: {family: "Arial", size: 12, color: "white"}
+      },
+      cells: {
+          values: values,
+          align: "center",
+          line: {color: "black", width: 1},
+          font: {family: "Arial", size: 11, color: ["black"]}
+      }
+      }]
+
     let configGraph1 = {responsive: true};
     Plotly.newPlot(document.getElementById('graph1'), [traceGraph1], layoutGraph1, configGraph1);
     Plotly.newPlot(document.getElementById('big_number'), dataBigNumber, layoutBigNumber);
     Plotly.newPlot(document.getElementById('pieChart'), dataPieChart, layoutPieChart);
+    Plotly.newPlot(document.getElementById('tableChart'),dataTable);
     xl = [];
     yl = [];
     x2 = [];
@@ -176,10 +198,31 @@ async function myFunc() {
       showlegend: false
       };
 
+    // defining data for table chart
+
+    var dataTable = [{
+      type: 'table',
+      header: {
+          values: [["<b>xl</b>"], ["<b>x2</b>"],
+                      ["<b>yl</b>"], ["<b>y2</b>"]],
+          align: "center",
+          line: {width: 1, color: 'black'},
+          fill: {color: "grey"},
+          font: {family: "Arial", size: 12, color: "white"}
+      },
+      cells: {
+          values: values,
+          align: "center",
+          line: {color: "black", width: 1},
+          font: {family: "Arial", size: 11, color: ["black"]}
+      }
+      }]
+
     let config = {responsive: true};
     Plotly.newPlot(document.querySelector('#defaultGraph1'), [trace1], layout, config);
     Plotly.newPlot(document.querySelector('#defaultBigNumber'), dataBigNumber, layoutBigNumber);
     Plotly.newPlot(document.querySelector('#defaultPieChart'), dataPieChart, layoutPieChart);
+    Plotly.newPlot(document.querySelector('#defaultTableChart'), dataTable)
   })
 }
 
