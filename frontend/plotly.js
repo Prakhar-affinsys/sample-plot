@@ -204,7 +204,7 @@ async function myFunc() {
     // defining data for table chart
 
     var values = [
-      xl,y1,x2,y2
+      xl,yl,x2,y2
     ]
 
     var dataTable = [{
