@@ -40,6 +40,7 @@ document.querySelector("#submit").addEventListener("click", async function () {
     defaultGraph1.innerHTML= ""
     defaultBigNumber.innerHTML = ""
     defaultPieChart.innerHTML = ""
+    defaultTableChart.innerHTML = ""
     let D = res;
     let xl = [];
     let yl = [];
