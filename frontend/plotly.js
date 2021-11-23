@@ -105,16 +105,13 @@ document.querySelector("#submit").addEventListener("click", async function () {
 
     // defining data for table chart
     var values = [
-      ['id', xl],
-      ['Name', yl],
-      ['age', x2],
-      ['Number', y2]
+      xl,yl,x2,y2
     ]
     var dataTable = [{
       type: 'table',
       header: {
-          values: [["<b>xl</b>"], ["<b>x2</b>"],
-                      ["<b>yl</b>"], ["<b>y2</b>"]],
+          values: [["<b>Id</b>"], ["<b>Name</b>"],
+                      ["<b>Age</b>"], ["<b>Number</b>"]],
           align: "center",
           line: {width: 1, color: 'black'},
           fill: {color: "grey"},
@@ -207,17 +204,14 @@ async function myFunc() {
     // defining data for table chart
 
     var values = [
-      ['id', xl],
-      ['Name', yl],
-      ['age', x2],
-      ['Number', y2]
+      xl,y1,x2,y2
     ]
 
     var dataTable = [{
       type: 'table',
       header: {
-          values: [["<b>xl</b>"], ["<b>x2</b>"],
-                      ["<b>yl</b>"], ["<b>y2</b>"]],
+          values: [["<b>id</b>"], ["<b>Name</b>"],
+                      ["<b>Age</b>"], ["<b>Number</b>"]],
           align: "center",
           line: {width: 1, color: 'black'},
           fill: {color: "grey"},
