@@ -104,7 +104,12 @@ document.querySelector("#submit").addEventListener("click", async function () {
       };
 
     // defining data for table chart
-    
+    var values = [
+      ['id', xl],
+      ['Name', yl],
+      ['age', x2],
+      ['Number', y2]
+    ]
     var dataTable = [{
       type: 'table',
       header: {
@@ -200,6 +205,13 @@ async function myFunc() {
       };
 
     // defining data for table chart
+
+    var values = [
+      ['id', xl],
+      ['Name', yl],
+      ['age', x2],
+      ['Number', y2]
+    ]
 
     var dataTable = [{
       type: 'table',
