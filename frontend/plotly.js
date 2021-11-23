@@ -115,13 +115,13 @@ document.querySelector("#submit").addEventListener("click", async function () {
           align: "center",
           line: {width: 1, color: 'black'},
           fill: {color: "grey"},
-          font: {family: "Arial", size: 15, color: "white"}
+          font: {family: "Arial", size: 16, color: "white"}
       },
       cells: {
           values: values,
           align: "center",
           line: {color: "black", width: 1},
-          font: {family: "Arial", size: 15, color: ["black"]}
+          font: {family: "Arial", size: 16, color: ["black"]}
       }
       }]
 
@@ -215,13 +215,13 @@ async function myFunc() {
           align: "center",
           line: {width: 1, color: 'black'},
           fill: {color: "grey"},
-          font: {family: "Arial", size: 15, color: "white"}
+          font: {family: "Arial", size: 16, color: "white"}
       },
       cells: {
           values: values,
           align: "center",
           line: {color: "black", width: 1},
-          font: {family: "Arial", size: 15, color: ["black"]}
+          font: {family: "Arial", size: 16, color: ["black"]}
       }
       }]
 
