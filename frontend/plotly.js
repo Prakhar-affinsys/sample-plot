@@ -5,7 +5,7 @@ const defaultGraph1 = document.querySelector("#defaultGraph1")
 const defaultBigNumber = document.querySelector("#defaultBigNumber")
 // for pie chart
 const defaultPieChart = document.querySelector("#defaultPieChart")
-const defaultPieChart = document.querySelector("#defaultTableChart")
+const defaultTableChart = document.querySelector("#defaultTableChart")
 // Add More Graph Add new const
 function selectFilter() {
   select.addEventListener("change", () => {
