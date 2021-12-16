@@ -2,35 +2,36 @@
 <html lang="en">
 <!--index.html-->
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="vendor/plotly-2.6.3.min.js"></script>
-  <script src="vendor/jquery-3.6.0.min.js"></script>
-  <style>
-      .hidden {
-          display: none;
-      }
-      .show{
-          display: flex;
-      }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vendor/plotly-2.6.3.min.js"></script>
+    <script src="vendor/jquery-3.6.0.min.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .show {
+            display: flex;
+        }
+    </style>
 </head>
 
 <body>
 <h2>Filter Box</h2>
 <select name="filter" id="filter">
-  <option value="0">Please select different filter</option>
-  <option value="id">Filter by ID</option>
-  <option value="name">Filter by Name</option>
-  <option value="age">Filter by Age</option>
-  <option value="number">Filter by Number</option>
+    <option value="0">Please select different filter</option>
+    <option value="id">Filter by ID</option>
+    <option value="name">Filter by Name</option>
+    <option value="age">Filter by Age</option>
+    <option value="number">Filter by Number</option>
 </select>
 <div style="margin-top: 1rem" class="filterByAge hidden">
-  <label>Age</label>
-  <input type="text" id="filterByAge">
-  <input type="button" id="submit" value="Submit">
+    <label>Age</label>
+    <input type="text" id="filterByAge">
+    <input type="button" id="submit" value="Submit">
 </div>
 <h2>Graph1 - Merchant v/s age</h2>
 <div id="defaultGraph1" class="show" style="text-align: center"></div>
@@ -42,6 +43,9 @@
 <div id="defaultPieChart" class="show"></div>
 <div id="pieChart"></div>
 <h2>Graph4 - Table Chart</h2>
+<button>
+    <a id="downloadCSV">Download</a>
+</button>
 <div id="defaultTableChart" class="show"></div>
 <div id="tableChart"></div>
 <script src="plotly.js"></script>

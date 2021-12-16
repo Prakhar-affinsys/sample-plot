@@ -42,6 +42,7 @@ document.querySelector("#submit").addEventListener("click", async function () {
     defaultPieChart.innerHTML = ""
     defaultTableChart.innerHTML = ""
     let D = res;
+    console.log(D)
     let xl = [];
     let yl = [];
     let x2 = [];
